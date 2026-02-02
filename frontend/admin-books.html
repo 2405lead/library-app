@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Books</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Admin – Books</h2>
+    <a class="btn" href="index.html">Home</a>
+
+    <h3>Create Book</h3>
+    <form id="bookForm">
+      <input id="name" placeholder="Name" required>
+      <input id="authors" placeholder="Authors (comma separated)" required>
+      <input id="genres" placeholder="Genres (comma separated)" required>
+      <input id="total" placeholder="Total copies" type="number" required>
+      <input id="available" placeholder="Available copies" type="number" required>
+      <input id="pages" placeholder="Pages" type="number">
+      <input id="language" placeholder="Language">
+      <button class="btn" type="submit">Create</button>
+    </form>
+
+    <p class="msg" id="msg"></p>
+    <div id="list" class="list"></div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

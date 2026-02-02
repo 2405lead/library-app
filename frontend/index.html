@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="nav">
+        <div class="brand">📚 Library App <span class="badge" id="badge">Not logged in</span></div>
+        <div class="nav-actions">
+          <a class="btn" href="login.html">Login</a>
+          <a class="btn" href="register.html">Register</a>
+          <button class="btn danger" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="hero">
+        <h1>Manage books, borrowings, and analytics.</h1>
+        <p>This is a simple Library Management web app with MongoDB backend, JWT auth, and aggregation analytics.</p>
+        <div class="row" style="margin-top:14px">
+          <a class="btn primary" href="books.html">Browse Books</a>
+          <a class="btn teal" href="analytics.html">View Analytics</a>
+          <a class="btn" href="admin-books.html">Admin Panel</a>
+          <a class="btn" href="my-borrowings.html">My Borrowings</a>
+        </div>
+        <p class="small" style="margin-top:12px">Tip: login as librarian to add books, login as reader to borrow.</p>
+      </div>
+
+      <div class="grid">
+        <a class="tile" href="books.html">
+          <h3>📖 Books</h3>
+          <p>Browse books, check availability, and borrow.</p>
+        </a>
+        <a class="tile" href="my-borrowings.html">
+          <h3>🧾 My Borrowings</h3>
+          <p>See active borrowings and return books.</p>
+        </a>
+        <a class="tile" href="admin-books.html">
+          <h3>🛠 Admin Books</h3>
+          <p>Create new books and manage inventory.</p>
+        </a>
+        <a class="tile" href="analytics.html">
+          <h3>📊 Analytics</h3>
+          <p>Top borrowed books and active readers.</p>
+        </a>
+      </div>
+
+      <div class="footer">
+        <span>Backend: MongoDB + Express • Auth: JWT • Analytics: Aggregation Pipeline</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script>
+    const token=localStorage.getItem("token");
+    const role=localStorage.getItem("role")||"";
+    document.getElementById("badge").textContent=token?("Logged in: "+role):"Not logged in";
+    document.getElementById("logoutBtn").addEventListener("click",logout);
+  </script>
+</body>
+</html>
+

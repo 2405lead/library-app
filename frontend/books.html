@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Books</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="nav">
+        <div class="brand">📚 Books <span class="badge" id="badge"></span></div>
+        <div class="nav-actions">
+          <a class="btn" href="my-borrowings.html">My Borrowings</a>
+          <a class="btn" href="index.html">Home</a>
+          <button class="btn danger" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="hero" style="padding-top:10px">
+        <div class="row">
+          <input id="q" placeholder="Search by name...">
+          <button class="btn primary" id="searchBtn">Search</button>
+        </div>
+        <p class="msg" id="msg"></p>
+      </div>
+
+      <div id="list" class="list"></div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/books.js"></script>
+  <script>
+    document.getElementById("badge").textContent=localStorage.getItem("token")?("role: "+(localStorage.getItem("role")||"")):"guest";
+    document.getElementById("logoutBtn").addEventListener("click",logout);
+  </script>
+</body>
+</html>
+
